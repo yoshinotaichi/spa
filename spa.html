@@ -39,43 +39,45 @@
 
 	<script src="js/jquery-1.12.4.min.js"></script>
 	<script>
-		/* jslint設定 */
+	/*jslint browser 	: true, continue : true,
+	  devel  : true, indent : 2,  maxerr : 50,
+	  newcap : true, nomen  : true, plusplus : true,
+	  regexp : true, sloppy : true, vars  : true,
+	  white  : true
+	*/
+	/*global jQuery spa:true */
+	// モジュール/spa/
+	// チャットスライダー機能を提供する
+	//
+	var spa = (function($){
+		// モジュールスコープ変数
+		var
+			// 定数を設定する
+			configMap = {
+				extended_height : 434,
+				extended_title : 'Click to retract',
+				retracted_height : 16,
+				retracted_title : 'Click to extend',
+				template_html : '<div class="spa-slider"><\/div>'
+			},
+			// その他のすべてのモジュールスコープ変数を宣言する
+			$chatSlider,
+			toggleSlider, onClickSlider, initModule;
 
-		// モジュール/spa/
-
-		// チャットスライダー機能を提供する
+		// DOMメソッド/toggleSlider/
+		// スライダーの高さを切り替える
 		//
-		var spa = ( function( $ ) {
-			// モジュールスコープ変数
-			var 
-				// 定数を設定する
-				configMap = {},
-				// その他のすべてのモッジュールスコープ変数を宣言する
-				$chatSlider,
-				toggleSlider, onClickSlider, initModule;
+		toggleSlider = function(){
+			var
+				slider_height = $chatSlider.height();
 
-			// DOMメソッド/toggleSlider/
-			// スライダーの高さを切り替える
-			//
-			toggleSlider = function(){};
+			// 完全に格納されている場合はスライダーを拡大する
+			if( slider_height === configMap.retracted_height ){
+				
+			}
+		}
 
-			// イベントハンドラ/onClickSlider/
-			// クリックイベントを受け取り、toggleSliderを呼び出す
-			//
-			onClickSlider = function( event ){};
-
-			// パブリックメソッド/initModule/
-			// 初期状態を設定し、機能を提供する
-			initModule = function( $container ){
-				// HTMLをレンダリングする
-				// スライダーの高さとタイトルを初期化する
-				// ユーザクリックイベントをイベントハンドラにバインドする
-			};
-		}());
-
-		
-		// DOMの準備ができたらspaを開始する
-
+	}(jQuery));
 	</script>
 </body>
 </html>
